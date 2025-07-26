@@ -339,7 +339,7 @@ const getUserChannelProfile = asyncHandler(async(req, res) => {
         $lookup: {
             from: "subscriptions",
             localField: "_id",
-            forgienField: "channel",
+            foreignField: "channel",
             as: "subscribers"
         }
     },
@@ -347,7 +347,7 @@ const getUserChannelProfile = asyncHandler(async(req, res) => {
         $lookup: {
             from: "subscriptions",
             localField: "_id",
-            forgienField: "subscriber",
+            foreignField: "subscriber",
             as: "subscribedTo"
         }
     },
@@ -361,7 +361,7 @@ const getUserChannelProfile = asyncHandler(async(req, res) => {
             },
             isSubscribed: {
                 $cond: {
-                    if: {$in : [req.user?._id, "subscribers.subscribe"]},
+                    if: {$in : [req.user?._id, "$subscribers.subscribe"]},
                     then: true,
                     else: false
                 }
@@ -396,7 +396,7 @@ const getWatchHistory = asyncHandler(async(req, res) => {
     const user = await User.aggregate([
         {
             $match: {
-                _id:  mongoose.Types.ObjectId(req. //new should add but bc of issue not added it
+                _id: new mongoose.Types.ObjectId(req. //new should add but bc of issue not added it
                     user._id)
             }
         },
