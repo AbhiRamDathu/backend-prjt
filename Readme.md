@@ -6,7 +6,8 @@ backend with javascript
 🧠 Backend Service – Node.js | Express | MongoDB
 A scalable backend API built using Node.js, Express, and MongoDB. This project includes robust user authentication, playlist management, video handling, like/dislike features, comment threading, and tweet-based interaction features. It follows modular structure and uses industry best practices.
 
-🚀 Features
+
+🚀 Features: 
 🔐 User Authentication (Register, Login)
 
 🎬 Video Management (upload, update, delete)
@@ -23,6 +24,8 @@ A scalable backend API built using Node.js, Express, and MongoDB. This project i
 
 ✅ Request validation and error handling
 
+
+
 📁 Project Structure
 /src
   /controllers   -> Route logic (e.g., user, playlist, video)
@@ -32,6 +35,8 @@ A scalable backend API built using Node.js, Express, and MongoDB. This project i
   /utils         -> Helper functions
   /config        -> Database and env config
 /public/temp     -> Temporary file storage (e.g., video/image uploads)
+
+
 
 🔧 Tech Stack
 Runtime: Node.js
@@ -46,18 +51,20 @@ Validation: Joi / custom logic
 
 Tooling: Prettier, Git, ESLint 
 
+
 📦 Installation:
-git clone https://github.com/AbhiRamDathu/backend-prjt.git
+  git clone https://github.com/AbhiRamDathu/backend-prjt.git
 cd backend-prjt
 
 Install dependencies:
-npm install
+ npm install
 
 Setup environment variables:
-cp .env.sample .env
+ cp .env.sample .env
 
 Run the server:
-npm run dev
+ npm run dev
+ 
 
 🔌 API Endpoints (Sample)
 Method	   Endpoint              Description
@@ -68,6 +75,7 @@ GET	  /api/v1/playlist/:id       Get playlist by ID
 POST /api/v1/like/:entityId	     Like video/tweet/comment
 
 Full API docs coming soon...
+
 
 🧪 Testing
 Unit and integration tests with Abhi ram dathu + Mocha are under development.
