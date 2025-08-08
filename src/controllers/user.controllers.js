@@ -455,6 +455,7 @@ const getWatchHistory = asyncHandler(async(req, res) => {
     updateUserCoverImage,
     getUserChannelProfile,
     getWatchHistory,
+    generateAccessAndRefreshTokens,
 };
 
  // steps - {

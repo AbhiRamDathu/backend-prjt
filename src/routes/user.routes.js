@@ -10,12 +10,16 @@ import{
     registerUser, 
     updateAccountDetails,
     updateUserAvatar,
-    updateUserCoverImage } from "../controllers/user.controllers.js";
-import {upload} from "../middlewares/multer.middlewares.js";
+    updateUserCoverImage,
+    generateAccessAndRefreshTokens } from "../controllers/user.controllers.js";
+import { upload } from "../middlewares/multer.middlewares.js";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
 
 
 const router = Router()
+
+
+
 
 router.route("/register").post(
     upload.fields([
@@ -45,5 +49,8 @@ router.route("/register").post(
     router.route("/c/:username").get(verifyJWT, getUserChannelProfile)
     router.route("/history").get(verifyJWT, getWatchHistory)
 
+   // router.route("/subscribe/:channelId").post(verifyJWT, subscribeChannel);
+  //  router.route("/unsubscribe/:channelId").post(verifyJWT, unsubscribeChannel);
+   // router.route("/getsubscribers/:channelId").get(verifyJWT, getSubscribers);
 
-export default router
+export default router;
